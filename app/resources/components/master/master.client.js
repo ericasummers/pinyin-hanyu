@@ -6,9 +6,11 @@ import userDetails from './userDetails.vue';
 import master from './master.vue';
 import VueRouter from 'vue-router';
 import Vue2Filters from 'vue2-filters';
+import VeeValidate from 'vee-validate';
 
 Vue.use(VueRouter);
 Vue.use(Vue2Filters);
+Vue.use(VeeValidate);
 
 const router = new VueRouter({
     routes: [

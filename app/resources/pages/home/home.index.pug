@@ -5,3 +5,11 @@ block content
   p Welcome to #{title}
 
   p This is the homepage for this template project
+
+      #RouterVue
+        //- pass dbMergeRequest javascript variable as string to use in child components
+        vue-master(v-bind:db-merge-requests=dbMergeRequests v-bind:user-list=userList v-bind:merge-requests-by-user=mergeRequestsByUser v-bind:closed-requests-totals=closedRequestsTotals v-bind:average-users-close-times=averageUsersCloseTimes v-bind:raw-users-close-times=rawUsersCloseTimes)
+
+
+  block script
+    script(src="/public/bundles/master.bundle.js")

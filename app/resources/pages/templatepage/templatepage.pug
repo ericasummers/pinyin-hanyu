@@ -1,5 +1,20 @@
-extends /layout.pug
+extends ../layout
+
+block custom-stylesheet
+        link(rel='stylesheet', href='/public/request-styles.css', type='text/css')
 
 block content
+    h1.frescaFont.lightGreyText.centerText.negativeTopMargin
+        | Welcome to 
+        a(href='/requests#/')
+            img.solidLogo(src='../../public/images/SolidDigital-Logo-Lockup-white-red.png')
+        |  Merge Requests 
 
-    h2 #{title}
+    h4.frescaFont.lightGreyText.container Total Company Merge Requests: <span class=totalMerges> #{requestsCount}<span>
+    
+    #RouterVue
+        //- pass dbMergeRequest javascript variable as string to use in child components
+        vue-master(v-bind:compiled-users-data=compiledUsersData)
+
+block script
+    script(src="/public/bundles/master.bundle.js")
